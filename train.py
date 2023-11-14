@@ -77,7 +77,20 @@ def main():
         ]
     )
 
-    mnistTrainSet = torchvision.datasets.FashionMNIST(
+    FashMnistTrainSet = torchvision.datasets.FashionMNIST(
+        root='./data', 
+        train=True,
+        download=True, 
+        transform=transform
+    )
+    FashMnistTrainLoader = torch.utils.data.DataLoader(
+        FashMnistTrainSet, 
+        batch_size=128,
+        shuffle=True, 
+        num_workers=8
+    )
+
+    mnistTrainSet = torchvision.datasets.MNIST(
         root='./data', 
         train=True,
         download=True, 
@@ -90,26 +103,13 @@ def main():
         num_workers=8
     )
 
-    mnistTestSet = torchvision.datasets.FashionMNIST(
-        root='./data', 
-        train=False,
-        download=True, 
-        transform=transform
-    )
-    mnistTestLoader = torch.utils.data.DataLoader(
-        mnistTestSet, 
-        batch_size=128,
-        shuffle=True, 
-        num_workers=8
-    )
-
     #FASHION MNIST
     #1: 0.92535
     #2: 0.92591
     h = 128
     layers = 5
-    train('fash_mnist_mlp_e50_l%d_h%d_v1' % (layers, h), layers=layers, h=h, train_loader=mnistTrainLoader, device=device)
-    train('fash_mnist_mlp_e50_l%d_h%d_v2' % (layers, h), layers=layers, h=h, train_loader=mnistTrainLoader, device=device)
+    train('mnist_mlp_e50_l%d_h%d_v1_cuda' % (layers, h), layers=layers, h=h, train_loader=mnistTrainLoader, device=device)  
+    train('fash_mnist_mlp_e50_l%d_h%d_v2_cuda' % (layers, h), layers=layers, h=h, train_loader=FashMnistTrainLoader, device=device)
 
 
 if __name__ == "__main__":
