@@ -3,7 +3,7 @@ import scipy
 import copy
 
 from tqdm import tqdm
-from ..models.mlp import LayerWrapper, MLP
+from models.mlp import LayerWrapper, MLP
 
 import numpy as np
 import torch.nn as nn

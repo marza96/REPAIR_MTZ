@@ -3,7 +3,8 @@ import scipy
 import copy
 
 from tqdm import tqdm
-from ..models.mlp import LayerWrapper, MLP
+
+from models.mlp import LayerWrapper, MLP
 
 import numpy as np
 import torch.nn as nn
@@ -162,7 +163,10 @@ class NeuralAlignDiff:
 
         if new_stats is False:
             return modela
-
+        
+        return self.REPAIR(alpha, model0, model1, modela, loader=loader, device=device)
+        
+    def REPAIR(self, alpha, model0, model1, modela, loader=None, device=None):
         model0_tracked = self.wrap_layers(model0, rescale=False).to(device)
         model1_tracked = self.wrap_layers(model1, rescale=False).to(device)
         modela_tracked = self.wrap_layers(modela, rescale=False).to(device)
