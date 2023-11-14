@@ -81,6 +81,7 @@ def main():
         num_workers=8
     )
 
+    print("DEV", device)
     model0 = MLP(h, layers).to(device)
     model1 = MLP(h, layers).to(device)
     load_model(model0, "./mlps2/fash_mnist_mlp_e50_l5_h128_v1_cuda.pt")
