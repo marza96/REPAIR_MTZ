@@ -26,7 +26,7 @@ def load_model(model, i):
 def main():
     h          = 128
     layers     = 5
-    device     = torch.device("mps")
+    device     = torch.device("cuda")
     MNIST_MEAN = [33.32]
     MNIST_STD  = [78.58]
 
