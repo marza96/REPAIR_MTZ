@@ -66,7 +66,7 @@ def train(save_key, layers=5, h=512, train_loader=None, device=None):
 
 def main():
     os.makedirs('./mlps2', exist_ok=True)
-    device = torch.device("mps")
+    device = torch.device("cuda")
     MNIST_MEAN = [0.1307]
     MNIST_STD = [0.3081]
 
