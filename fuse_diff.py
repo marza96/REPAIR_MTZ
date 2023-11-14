@@ -84,8 +84,8 @@ def main():
     print("DEV", device)
     model0 = MLP(h, layers).to(device)
     model1 = MLP(h, layers).to(device)
-    load_model(model0, "./mlps2/fash_mnist_mlp_e50_l5_h128_v2_cuda.pt")
-    load_model(model1, "./mlps2/mnist_mlp_e50_l5_h128_v1_cuda.pt")
+    load_model(model0, "REPAIR_MTZ/mlps2/fash_mnist_mlp_e50_l5_h128_v2_cuda.pt")
+    load_model(model1, "REPAIR_MTZ/mlps2/mnist_mlp_e50_l5_h128_v1_cuda.pt")
 
     plain_acc               = list()
     permute_acc             = list()
