@@ -102,13 +102,13 @@ def main():
 
         permute_acc.append(eval.evaluate_acc(modela, loader=FashionMNISTTrainLoader, device=device))
     
-    plt.figure()
-    # plt.plot(np.linspace(0, 1.0, num_experiments), plain_acc)
-    plt.plot(np.linspace(0, 1.0, num_experiments), permute_acc)
-    plt.xlabel("alpha")
-    plt.ylabel("acc")
-    plt.legend(["plain fusion", "permuted fusion"])
-    plt.savefig("./plots/permute.png")
+    # plt.figure()
+    # # plt.plot(np.linspace(0, 1.0, num_experiments), plain_acc)
+    # plt.plot(np.linspace(0, 1.0, num_experiments), permute_acc)
+    # plt.xlabel("alpha")
+    # plt.ylabel("acc")
+    # plt.legend(["plain fusion", "permuted fusion"])
+    # plt.savefig("./plots/permute.png")
 
 
     for i in tqdm.tqdm(range(10)):
@@ -119,14 +119,14 @@ def main():
 
         permute_and_rescale_acc.append(eval.evaluate_acc(modela, loader=FashionMNISTTrainLoader, device=device))
     
-    plt.figure()
-    # plt.plot(np.linspace(0, 1.0, num_experiments), plain_acc)
-    plt.plot(np.linspace(0, 1.0, num_experiments), permute_acc)
-    plt.plot(np.linspace(0, 1.0, num_experiments), permute_and_rescale_acc)
-    plt.xlabel("alpha")
-    plt.ylabel("acc")
-    plt.legend(["plain fusion", "permuted fusion", "REPAIR fusion"])
-    plt.savefig("./plots/permute.png")
+    # plt.figure()
+    # # plt.plot(np.linspace(0, 1.0, num_experiments), plain_acc)
+    # plt.plot(np.linspace(0, 1.0, num_experiments), permute_acc)
+    # plt.plot(np.linspace(0, 1.0, num_experiments), permute_and_rescale_acc)
+    # plt.xlabel("alpha")
+    # plt.ylabel("acc")
+    # plt.legend(["plain fusion", "permuted fusion", "REPAIR fusion"])
+    # plt.savefig("./plots/permute.png")
    
 if __name__ == "__main__":
     main()
