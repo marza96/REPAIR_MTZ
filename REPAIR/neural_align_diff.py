@@ -4,7 +4,7 @@ import copy
 
 from tqdm import tqdm
 
-from net_models.mlp import LayerWrapper, MLP
+from ..net_models.mlp import LayerWrapper, MLP
 
 import numpy as np
 import torch.nn as nn
