@@ -197,7 +197,7 @@ class NeuralAlignDiff:
             stats0_ = model0_tracked.fc1.get_stats()
             stats1_ = model1_tracked.fc1.get_stats()
 
-            print(stats0_.shape)
+            print(stats0_[0].shape)
 
             self.statistics.append((stats0_, stats1_))
 
