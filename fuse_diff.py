@@ -1,4 +1,4 @@
-from models.mlp import MLP
+from net_models.mlp import MLP
 from REPAIR import eval
 from REPAIR.neural_align_diff import NeuralAlignDiff
 
@@ -61,19 +61,6 @@ def main():
         num_workers=8
     )
 
-    # FashionMnistSet = torchvision.datasets.FashionMNIST(
-    #     root='./data', 
-    #     train=False,
-    #     download=True, 
-    #     transform=transform
-    # )
-    # FashionMnistLoader = torch.utils.data.DataLoader(
-    #     FashionMnistSet, 
-    #     batch_size=128,
-    #     shuffle=True, 
-    #     num_workers=8
-    # )
-
     ConcatTrainLoader = torch.utils.data.DataLoader(
         ConcatDataset((FashionMNISTTrainSet, MNISTTrainSet)), 
         batch_size=128,
@@ -81,7 +68,6 @@ def main():
         num_workers=8
     )
 
-    print("DEV", device)
     model0 = MLP(h, layers).to(device)
     model1 = MLP(h, layers).to(device)
     load_model(model0, "REPAIR_MTZ/mlps2/fash_mnist_mlp_e50_l5_h128_v2_cuda.pt")

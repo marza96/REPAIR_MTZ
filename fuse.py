@@ -1,4 +1,4 @@
-from models.mlp import MLP
+from net_models.mlp import MLP
 from REPAIR import eval
 from REPAIR.neural_align import NeuralAlign
 

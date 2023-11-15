@@ -1,5 +1,5 @@
 from REPAIR import eval
-from models.mlp import MLP
+from net_models.mlp import MLP
 
 import numpy as np
 import matplotlib.pyplot as plt

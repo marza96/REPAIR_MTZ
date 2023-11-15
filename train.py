@@ -9,7 +9,7 @@ import torchvision.transforms as transforms
 from torch.nn import CrossEntropyLoss
 from torch.optim import SGD, lr_scheduler
 
-from models.mlp import MLP
+from net_models.mlp import MLP
 from REPAIR.eval import evaluate_acc
 
 
